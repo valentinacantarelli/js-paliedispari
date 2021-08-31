@@ -10,20 +10,23 @@ function numeroRandom (min,max){
 
 function pariDispari(num1){
     if (num1%2==0){
-        return pari;
+        return true;
     }
-    return dispari;
+    return false;
     
 }
 
-var sceltaUtente = prompt("Ciao,scegli pari o dispari");
+var sceltaUtente = prompt("Ciao, scegli, pari o dispari?");
+
 var numeroUtente = parseInt(prompt("Scegli un numero tra 1 e 5"));
 
 var somma =numeroUtente + numeroRandom(1,5);
-
- if (somma == pariDispari(pari) && sceltaUtente == "pari"){
+console.log(somma);
+ if (pariDispari(somma) && sceltaUtente == "pari"){
      alert("hai vinto!");
 
+ }else if(!pariDispari(somma) && sceltaUtente == "dispari") {
+     alert("hai vinto");
  }else{
      alert("hai perso");
  }
